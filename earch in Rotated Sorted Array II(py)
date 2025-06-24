@@ -1,0 +1,14 @@
+class Solution(object):
+    def search(self, nums, target):
+        """
+        :type nums: List[int]
+        :type target: int
+        :rtype: bool
+        """
+        st=0
+        for i in nums:
+            if i==target:
+                st=1
+                break
+        return st==1
+        
