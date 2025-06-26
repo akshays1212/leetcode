@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int maximumGap(vector<int>& nums) {
+        int mx=0;
+        int n=nums.size();
+        if (n<=1)return 0;
+        sort(nums.begin(),nums.end());
+        for (int i=1;i<n;i++){
+            int j=i-1;
+            int dif=nums[i]-nums[j];
+            mx=max(mx,dif);
+        }
+        return mx;
+    }
+};
