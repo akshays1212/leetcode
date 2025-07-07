@@ -1,0 +1,15 @@
+class Solution {
+    public boolean containsDuplicate(int[] nums) {
+        int n=nums.length;
+        int count=0;
+        Arrays.sort(nums);
+        for(int i=1;i<n;i++){
+            int j=i-1;
+            if(nums[j]==nums[i]){
+                count++;
+                break;
+            }
+        }
+        return count!=0;
+    }
+}
