@@ -1,0 +1,21 @@
+class Solution:
+    def generateParenthesis(self, n: int) -> List[str]:
+        st = []
+        res = []
+        def back(op, clo):
+            if op == clo == n:
+                res.append("".join(st))
+                return
+
+            if op < n:
+                st.append("(")
+                back(op + 1, clo)
+                st.pop()
+
+            if clo < op:
+                st.append(")")
+                back(op, clo + 1)
+                st.pop()
+
+        back(0, 0)
+        return res
