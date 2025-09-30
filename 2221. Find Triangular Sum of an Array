@@ -1,0 +1,18 @@
+class Solution {
+public:
+    int triangularSum(vector<int>& nums) {
+        while(nums.size()>1){
+            nums=sums(nums);
+        }
+        return nums[0];
+        
+    }
+    vector<int> sums(vector<int>& nums){
+        vector<int> res;
+        for(int i=1;i<nums.size();i++){
+            int temp=(nums[i-1]+nums[i])%10;
+            res.push_back(temp);
+        }
+        return res;
+    }
+};
