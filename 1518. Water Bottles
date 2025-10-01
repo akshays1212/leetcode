@@ -1,0 +1,15 @@
+class Solution {
+public:
+    int numWaterBottles(int numBottles, int numExchange) {
+        int tot= numBottles; 
+        int emp = numBottles; 
+        
+        while (emp >= numExchange) {
+            int ne = emp/ numExchange;
+            tot+= ne;
+            emp = emp % numExchange + ne;
+        }
+        
+        return tot;
+    }
+};
