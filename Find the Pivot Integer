@@ -1,0 +1,19 @@
+class Solution {
+public:
+    int pivotInteger(int n) {
+        int x=-1;
+        int a=0;
+
+        int b=n*(n+1)/2;
+        for(int i=1;i<=n;i++){
+            a+=i;
+            
+            if(a==b){
+                x=i;
+                break;
+            }
+            b-=i;
+        }
+        return x;
+    }
+};
