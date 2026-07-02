@@ -1,0 +1,10 @@
+class Solution:
+    def convertToTitle(self, columnNumber: int) -> str:
+        c=columnNumber
+        st=""
+        while c>0:
+            c-=1
+            x=c%26
+            st+=chr(x+65)
+            c//=26
+        return st[::-1]
