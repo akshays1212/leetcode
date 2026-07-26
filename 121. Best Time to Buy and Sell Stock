@@ -1,0 +1,11 @@
+class Solution(object):
+    def maxProfit(self, prices):
+        min=1000000
+        max=0
+        for i in prices:
+            if i<min:
+                min=i
+            elif i-min>max:
+                max=i-min
+        return max
+        
