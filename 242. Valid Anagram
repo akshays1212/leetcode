@@ -1,0 +1,11 @@
+class Solution(object):
+    def isAnagram(self, s, t):
+        count={}
+        for i in s:
+            count[i]=count.get(i,0)+1
+        for j in t:
+            if j not in count:
+                return False
+            count[j]-=1
+        return all(c == 0 for c in count.values())
+        
