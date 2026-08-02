@@ -1,0 +1,12 @@
+class Solution:
+    def stoneGame(self, piles: List[int]) -> bool:
+        i=0
+        j=i+1
+        a=0
+        b=0
+        while i<len(piles) and j<(len(piles)):
+            a+=max(piles[j],piles[i])
+            b+=min(piles[i],piles[j])
+            i+=2
+            j+=2
+        return a>b
