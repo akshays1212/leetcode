@@ -1,0 +1,16 @@
+class Solution:
+    def smallestNumber(self, n: int, t: int) -> int:
+        def product(x):
+            d=0
+            res=1
+            while x>0:
+                d=x%10
+                res*=d
+                x//=10
+            return res
+        for i in range(n,n+t+1):
+            y=product(i)
+            if y%t==0:
+                return i
+    
+    
